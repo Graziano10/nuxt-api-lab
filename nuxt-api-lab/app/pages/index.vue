@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <section class="space-y-12">
 
     <header class="space-y-4">
@@ -40,15 +40,7 @@
       />
     </div>
   </section>
-</template> -->
-
-<template>
-  <div class="p-10 text-white">
-    <h1 class="text-3xl font-bold">Nuxt API Lab</h1>
-    <p>SSR OK</p>
-  </div>
 </template>
-
 
 <script setup lang="ts">
 </script>
