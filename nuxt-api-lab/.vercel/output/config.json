@@ -78,8 +78,8 @@
       "dest": "/api/weather"
     },
     {
-      "src": "/api/health",
-      "dest": "/api/health"
+      "src": "/api/map/geocode",
+      "dest": "/api/map/geocode"
     },
     {
       "src": "/api/agro/weather",

@@ -1,6 +1,6 @@
-<template>
+<!-- <template>
   <section class="space-y-12">
-    <!-- Hero -->
+
     <header class="space-y-4">
       <h1 class="text-3xl font-bold tracking-tight" to="/index">Nuxt API Lab</h1>
 
@@ -10,7 +10,6 @@
       </p>
     </header>
 
-    <!-- API Cards -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <ApiCard
         title="Weather API"
@@ -41,7 +40,15 @@
       />
     </div>
   </section>
+</template> -->
+
+<template>
+  <div class="p-10 text-white">
+    <h1 class="text-3xl font-bold">Nuxt API Lab</h1>
+    <p>SSR OK</p>
+  </div>
 </template>
+
 
 <script setup lang="ts">
 </script>
