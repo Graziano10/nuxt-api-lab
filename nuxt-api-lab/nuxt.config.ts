@@ -1,4 +1,3 @@
-// nuxt.config.ts
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
 
@@ -10,23 +9,23 @@ export default defineNuxtConfig({
     '@nuxt/scripts'
   ],
 
-  css: ['~/assets/css/tailwind.css'],
-
-  build: {
-    transpile: ['leaflet']
-  },
-
-  vite: {
-    ssr: {
-      noExternal: ['leaflet']
-    },
-    optimizeDeps: {
-      include: ['leaflet']
-    }
-  },
+  css: [
+    '~/assets/css/tailwind.css',
+    'leaflet/dist/leaflet.css'
+  ],
 
   nitro: {
     preset: 'vercel'
+  },
+
+  typescript: {
+    tsConfig: {
+      include: [
+        './types/**/*.d.ts',
+        './**/*.ts',
+        './**/*.vue'
+      ]
+    }
   },
 
   runtimeConfig: {

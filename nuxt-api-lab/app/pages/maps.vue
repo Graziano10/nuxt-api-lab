@@ -3,20 +3,15 @@
     <h1 class="text-3xl font-bold">Mappe interattive</h1>
 
     <p class="text-gray-600 max-w-2xl">
-      In questa pagina integriamo una mappa stile Google Earth usando
-      OpenStreetMap, Leaflet e tiles satellitari ESRI.
+      In questa pagina integriamo una mappa interattiva con Leaflet.
     </p>
 
-    <MapViewClient />
+    <ClientOnly>
+      <MapView />
+    </ClientOnly>
   </div>
 </template>
 
-
-
 <script setup lang="ts">
-import MapViewClient from '~/components/MapView.client.vue';
-
-
-
-
+import MapView from '~/components/MapView.client.vue'
 </script>

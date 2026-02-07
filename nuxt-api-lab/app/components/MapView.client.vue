@@ -1,7 +1,10 @@
 <template>
-  <form class="space-y-4" @submit.prevent="searchLocation">
-    <!-- SEARCH CONTROLS -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+  <div class="space-y-4">
+    <!-- SEARCH -->
+    <form
+      class="grid grid-cols-1 md:grid-cols-4 gap-2"
+      @submit.prevent="searchLocation"
+    >
       <BaseInput
         v-model="city"
         placeholder="Città o indirizzo"
@@ -19,63 +22,43 @@
         type="number"
       />
 
-<BaseButton
-  type="submit"
-  variant="primary"
-  size="sm"
-  :disabled="!canSearch"
->
-  Cerca
-</BaseButton>
-    </div>
+      <BaseButton
+        type="submit"
+        size="sm"
+        :disabled="!canSearch"
+      >
+        Cerca
+      </BaseButton>
+    </form>
 
     <!-- MAP -->
-    <div class="relative">
-      <div
-        id="map"
-        class="h-[500px] w-full rounded-card shadow-card"
-      />
+    <div
+      id="map"
+      class="h-[500px] w-full rounded-lg shadow"
+    />
 
-      <!-- LAYERS -->
-      <div
-        class="absolute top-4 right-4 z-[1000] flex gap-2 rounded-card bg-surface p-2 shadow-card"
-      >
-        <BaseButton size="sm" variant="secondary" @click="setMapLayer">
-          Mappa
-        </BaseButton>
-        <BaseButton size="sm" variant="secondary" @click="setSatelliteLayer">
-          Satellite
-        </BaseButton>
-      </div>
-    </div>
-
-    <!-- FEEDBACK -->
+    <!-- ERROR -->
     <BaseAlert v-if="error" type="error">
       {{ error }}
     </BaseAlert>
-  </form>
+  </div>
 </template>
 
-
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import * as L from 'leaflet'
 
+import BaseInput from '@/components/ui/BaseInput.vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseAlert from '@/components/ui/BaseAlert.vue'
-import BaseInput from '@/components/ui/BaseInput.vue'
 
-import type {
-  Map as LeafletMap,
-  TileLayer,
-  Marker
-} from 'leaflet'
-
+/* =======================
+   TYPES
+======================= */
 interface NominatimResult {
   lat: string
   lon: string
-  display_name: string
 }
-
 
 /* =======================
    STATE
@@ -86,40 +69,44 @@ const lon = ref('')
 const error = ref<string | null>(null)
 
 /* =======================
+   DERIVED
+======================= */
+const canSearch = computed(() =>
+  Boolean(city.value.trim() || (lat.value && lon.value))
+)
+
+/* =======================
    LEAFLET
 ======================= */
-let map: LeafletMap
-let mapLayer: TileLayer
-let satelliteLayer: TileLayer
-let marker: Marker | null = null
-let L: typeof import('leaflet')
+let map: L.Map | null = null
+let marker: L.Marker | null = null
 
-const canSearch = computed(() => {
-  return Boolean(
-    city.value.trim() ||
-    (lat.value.trim() && lon.value.trim())
-  )
-})
 /* =======================
-   MAP INIT
+   MAP INIT (CLIENT ONLY)
 ======================= */
-onMounted(async () => {
-  L = await import('leaflet')
-  await import('leaflet/dist/leaflet.css')
+onMounted(() => {
+  const mapEl = document.getElementById('map')
+  if (!mapEl) return
 
-  map = L.map('map').setView([45.4642, 9.19], 6)
+  map = L.map(mapEl).setView([45.4642, 9.19], 6)
 
-  mapLayer = L.tileLayer(
+  L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     { attribution: '&copy; OpenStreetMap contributors' }
-  )
+  ).addTo(map)
 
-  satelliteLayer = L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { attribution: 'Tiles © Esri' }
-  )
+  // click sulla mappa → aggiorna coordinate
+map.on('click', (e: L.LeafletMouseEvent) => {
+  const { lat: la, lng: lo } = e.latlng
 
-  mapLayer.addTo(map)
+  lat.value = la.toFixed(6)
+  lon.value = lo.toFixed(6)
+  city.value = ''
+  flyTo(la, lo)
+})
+
+  // fix rendering Nuxt
+  setTimeout(() => map?.invalidateSize(), 0)
 })
 
 /* =======================
@@ -128,60 +115,51 @@ onMounted(async () => {
 async function searchLocation() {
   error.value = null
 
-  // 🔹 PRIORITÀ: città / indirizzo
-  if (city.value.trim()) {
-    try {
+  try {
+    // 🔹 ricerca per città
+    if (city.value.trim()) {
       const results = await $fetch<NominatimResult[]>(
-        'https://nominatim.openstreetmap.org/search',
-        {
-          params: {
-            q: city.value,
-            format: 'json',
-            limit: 1
-          },
-          headers: {
-            'Accept-Language': 'it'
-          }
-        }
+        '/api/map/geocode',
+        { params: { q: city.value } }
       )
 
-      const result = results[0]
-      if (!result) {
-        error.value = 'Nessun risultato trovato'
-        return
-      }
-
-      const latNum = Number(result.lat)
-      const lonNum = Number(result.lon)
-
-      // aggiorna anche i campi
-      lat.value = String(latNum)
-      lon.value = String(lonNum)
-
-      flyTo(latNum, lonNum)
-      return
-    } catch {
-      error.value = 'Errore nella ricerca della località'
-      return
-    }
-  }
-
-  // 🔹 FALLBACK: coordinate manuali
-  if (lat.value && lon.value) {
-    flyTo(Number(lat.value), Number(lon.value))
-    return
-  }
-
-  error.value = 'Inserisci una città o coordinate'
+    const result = results[0]
+if (!result) {
+  error.value = 'Nessun risultato trovato'
+  return
 }
 
+lat.value = result.lat
+lon.value = result.lon
+    }
 
+    if (!lat.value || !lon.value) {
+      error.value = 'Inserisci una città o coordinate'
+      return
+    }
+
+    const latNum = Number(lat.value)
+    const lonNum = Number(lon.value)
+
+    if (Number.isNaN(latNum) || Number.isNaN(lonNum)) {
+      error.value = 'Coordinate non valide'
+      return
+    }
+
+    flyTo(latNum, lonNum)
+  } catch (e) {
+    console.error(e)
+    error.value = 'Errore nella ricerca della località'
+  }
+}
 
 /* =======================
-   MAP HELPERS
+   HELPERS
 ======================= */
 function flyTo(lat: number, lon: number) {
-  map.setView([lat, lon], 12, { animate: true })
+  if (!map) return
+
+  map.setView([lat, lon], 12)
 
   if (marker) {
     marker.setLatLng([lat, lon])
@@ -190,20 +168,4 @@ function flyTo(lat: number, lon: number) {
   }
 }
 
-/* =======================
-   LAYERS
-======================= */
-function setMapLayer() {
-  if (map.hasLayer(satelliteLayer)) {
-    map.removeLayer(satelliteLayer)
-  }
-  mapLayer.addTo(map)
-}
-
-function setSatelliteLayer() {
-  if (map.hasLayer(mapLayer)) {
-    map.removeLayer(mapLayer)
-  }
-  satelliteLayer.addTo(map)
-}
 </script>
