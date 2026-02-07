@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+/* =======================
+   TYPES
+======================= */
 type Variant = 'primary' | 'secondary' | 'danger'
 type Size = 'sm' | 'md' | 'lg'
 
+/* =======================
+   PROPS (UNA SOLA VOLTA)
+======================= */
 const props = withDefaults(
   defineProps<{
     variant?: Variant
@@ -21,8 +27,14 @@ const props = withDefaults(
   }
 )
 
+/* =======================
+   STATE
+======================= */
 const isDisabled = computed(() => props.disabled || props.loading)
 
+/* =======================
+   CLASSES
+======================= */
 const base =
   'inline-flex items-center justify-center gap-2 font-medium rounded-app transition focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed'
 
@@ -45,17 +57,17 @@ const classes = computed(() =>
 
 <template>
   <button
-    :type="type"
+    :type="props.type"
     :class="classes"
     :disabled="isDisabled"
     :aria-disabled="isDisabled"
-    :aria-busy="loading"
+    :aria-busy="props.loading"
   >
     <!-- Left icon -->
     <slot name="icon-left" />
 
     <!-- Content -->
-    <span v-if="!loading">
+    <span v-if="!props.loading">
       <slot />
     </span>
 

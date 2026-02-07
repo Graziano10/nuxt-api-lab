@@ -2,7 +2,7 @@
   <section class="space-y-12">
     <!-- Hero -->
     <header class="space-y-4">
-      <h1 class="text-3xl font-bold tracking-tight">
+      <h1 class="text-3xl font-bold tracking-tight" to ="/index">
         Nuxt API Lab
       </h1>
 
@@ -18,6 +18,13 @@
         title="Weather API"
         description="Integrazione di una API meteo reale con proxy server-side e gestione errori."
         to="/weather"
+        status="planned"
+      />
+
+      <ApiCard
+        title="Weather API"
+        description="Integrazione di una API meteo reale con proxy server-side e gestione errori."
+        to="/agriculture"
         status="planned"
       />
 

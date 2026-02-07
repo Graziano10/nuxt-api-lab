@@ -1,16 +1,23 @@
-export interface ExternalServiceError {
+interface ExternalServiceError {
   statusCode?: number
   statusMessage?: string
+  data?: unknown
 }
 
 function isExternalServiceError(
   error: unknown
 ): error is ExternalServiceError {
-  return (
-    typeof error === 'object' &&
-    error !== null &&
-    ('statusCode' in error || 'statusMessage' in error)
-  )
+  if (typeof error !== 'object' || error === null) {
+    return false
+  }
+
+  if (!('statusCode' in error)) {
+    return false
+  }
+
+  const statusCode = (error as Record<string, unknown>).statusCode
+
+  return typeof statusCode === 'number'
 }
 
 type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE'
@@ -21,32 +28,41 @@ type FetchBody =
   | null
   | undefined
 
-interface HttpRequestOptions<TBody extends FetchBody = undefined> {
+export interface HttpRequestOptions<
+  TBody extends FetchBody = undefined
+> {
   method?: HttpMethod
-  params?: Record<string, string | number>
+  query?: Record<string, string | number>
   headers?: Record<string, string>
   body?: TBody
 }
 
-export async function httpRequest<TResponse, TBody extends FetchBody = undefined>(
+
+export async function httpRequest<
+  TResponse,
+  TBody extends FetchBody = undefined
+>(
   url: string,
   options?: HttpRequestOptions<TBody>
 ): Promise<TResponse> {
   try {
-    const result: unknown = await $fetch(url, options)
+const response = await $fetch(url, options)
 
-    return result as TResponse
+return response as TResponse
   } catch (err: unknown) {
     if (isExternalServiceError(err)) {
       throw createError({
-        statusCode: err.statusCode ?? 502,
-        statusMessage: err.statusMessage ?? 'External service error'
+        statusCode: 503,
+        statusMessage: 'External service unavailable',
+        data: {
+          upstreamStatus: err.statusCode
+        }
       })
     }
 
     throw createError({
       statusCode: 500,
-      statusMessage: 'Unknown external service error'
+      statusMessage: 'Internal server error'
     })
   }
 }

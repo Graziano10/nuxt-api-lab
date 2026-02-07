@@ -13,6 +13,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     // 🔒 SOLO SERVER
-    weatherApiKey: process.env.WEATHER_API_KEY
+    weatherApiKey: process.env.WEATHER_API_KEY,
+    openWeatherKey: process.env.OPENWEATHER_KEY
   }
 })
