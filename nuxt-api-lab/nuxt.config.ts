@@ -3,16 +3,47 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  /* =======================
+     MODULES
+  ======================= */
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/eslint',
     '@nuxt/scripts'
   ],
 
+  /* =======================
+     CSS
+  ======================= */
   css: ['~/assets/css/tailwind.css'],
 
+  /* =======================
+     BUILD (Leaflet)
+  ======================= */
+  build: {
+    transpile: ['leaflet']
+  },
+
+  vite: {
+    optimizeDeps: {
+      exclude: ['leaflet']
+    }
+  },
+
+  /* =======================
+     NITRO (Vercel)
+  ======================= */
+  nitro: {
+    externals: {
+      inline: ['leaflet']
+    }
+  },
+
+  /* =======================
+     RUNTIME CONFIG
+  ======================= */
   runtimeConfig: {
-    // 🔒 SOLO SERVER
+    // 🔒 server-only
     weatherApiKey: process.env.WEATHER_API_KEY,
     openWeatherKey: process.env.OPENWEATHER_KEY
   }
