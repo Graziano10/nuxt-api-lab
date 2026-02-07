@@ -40,18 +40,8 @@
         status="planned"
       />
     </div>
-
-    <!-- Health check -->
-    <div class="rounded-xl border border-gray-800 bg-gray-900 p-6">
-      <h2 class="text-lg font-semibold mb-2">Server status</h2>
-
-      <pre class="text-sm text-green-400"
-        >{{ health }}
-      </pre>
-    </div>
   </section>
 </template>
 
 <script setup lang="ts">
-  const { data: health } = await useFetch('/api/health')
 </script>
