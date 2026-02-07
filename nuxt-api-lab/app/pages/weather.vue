@@ -98,7 +98,7 @@
             :src="`https://openweathermap.org/img/wn/${data.icon}@2x.png`"
             :alt="data.condition"
             class="h-12 w-12"
-          />
+            >
 
           <div>
             <Typography variant="h3">{{ data.city }}, {{ data.country }}</Typography>
