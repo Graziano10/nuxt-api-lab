@@ -1,4 +1,4 @@
-import type { WeatherResponse } from "~~/server/schemas/weather.schema"
+import type { WeatherResponse } from '~~/server/schemas/weather.schema'
 
 export function useWeather() {
   const data = ref<WeatherResponse | null>(null)
@@ -14,8 +14,8 @@ export function useWeather() {
         params: { city, unit }
       })
     } catch {
-  error.value = 'Error fetching weather'
-}finally {
+      error.value = 'Error fetching weather'
+    } finally {
       loading.value = false // ⬅️ QUESTO È OBBLIGATORIO
     }
   }

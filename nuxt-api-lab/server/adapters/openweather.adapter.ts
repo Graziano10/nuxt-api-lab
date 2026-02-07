@@ -7,18 +7,15 @@ export async function fetchWeather(
   unit: 'metric' | 'imperial' = 'metric'
 ): Promise<unknown> {
   try {
-    return await $fetch(
-      'https://api.openweathermap.org/data/2.5/weather',
-      {
-        params: {
-          q: city.trim().toLowerCase(),
-          units: unit,
-          appid: apiKey
-        },
-        timeout: 5_000,
-        retry: 1
-      }
-    )
+    return await $fetch('https://api.openweathermap.org/data/2.5/weather', {
+      params: {
+        q: city.trim().toLowerCase(),
+        units: unit,
+        appid: apiKey
+      },
+      timeout: 5_000,
+      retry: 1
+    })
   } catch (error: unknown) {
     if (error instanceof FetchError) {
       const status = error.response?.status

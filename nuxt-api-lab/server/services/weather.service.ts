@@ -1,4 +1,3 @@
-
 import { fetchWeather } from '../adapters/openweather.adapter'
 import { parseOrThrow } from '../utils/zod'
 
@@ -12,10 +11,7 @@ import type { WeatherResponse } from '../schemas/weather.schema'
 
 const storage = useStorage('cache')
 
-export async function getWeather(
-  query: unknown,
-  apiKey: string
-): Promise<WeatherResponse> {
+export async function getWeather(query: unknown, apiKey: string): Promise<WeatherResponse> {
   const { city, unit } = parseOrThrow(WeatherQuerySchema, query)
 
   const normalizedCity = city.trim().toLowerCase()

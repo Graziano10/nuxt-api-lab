@@ -13,5 +13,5 @@
 </template>
 
 <script setup lang="ts">
-import MapView from '~/components/MapView.client.vue'
+  import MapView from '~/components/MapView.client.vue'
 </script>

@@ -3,16 +3,9 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@nuxt/eslint',
-    '@nuxt/scripts'
-  ],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint', '@nuxt/scripts'],
 
-  css: [
-    '~/assets/css/tailwind.css',
-    'leaflet/dist/leaflet.css'
-  ],
+  css: ['~/assets/css/tailwind.css', 'leaflet/dist/leaflet.css'],
 
   nitro: {
     preset: 'vercel'
@@ -20,11 +13,7 @@ export default defineNuxtConfig({
 
   typescript: {
     tsConfig: {
-      include: [
-        './types/**/*.d.ts',
-        './**/*.ts',
-        './**/*.vue'
-      ]
+      include: ['./types/**/*.d.ts', './**/*.ts', './**/*.vue']
     }
   },
 

@@ -1,66 +1,66 @@
-import { F as FetchError, c as createError, e as useStorage } from './nitro.mjs';
-import { ZodError, z } from 'zod';
-import { b as badRequest } from './http.mjs';
+import { F as FetchError, c as createError, e as useStorage } from './nitro.mjs'
+import { ZodError, z } from 'zod'
+import { b as badRequest } from './http.mjs'
 
-async function fetchWeather(city, apiKey, unit = "metric") {
-  var _a;
+async function fetchWeather(city, apiKey, unit = 'metric') {
+  var _a
   try {
-    return await $fetch(
-      "https://api.openweathermap.org/data/2.5/weather",
-      {
-        params: {
-          q: city.trim().toLowerCase(),
-          units: unit,
-          appid: apiKey
-        },
-        timeout: 5e3,
-        retry: 1
-      }
-    );
+    return await $fetch('https://api.openweathermap.org/data/2.5/weather', {
+      params: {
+        q: city.trim().toLowerCase(),
+        units: unit,
+        appid: apiKey
+      },
+      timeout: 5e3,
+      retry: 1
+    })
   } catch (error) {
     if (error instanceof FetchError) {
-      const status = (_a = error.response) == null ? void 0 : _a.status;
+      const status = (_a = error.response) == null ? void 0 : _a.status
       if (status === 404) {
         throw createError({
           statusCode: 404,
-          statusMessage: "City not found"
-        });
+          statusMessage: 'City not found'
+        })
       }
       if (status === 401) {
         throw createError({
           statusCode: 502,
-          statusMessage: "Invalid OpenWeather API key"
-        });
+          statusMessage: 'Invalid OpenWeather API key'
+        })
       }
     }
     throw createError({
       statusCode: 503,
-      statusMessage: "Weather service unavailable"
-    });
+      statusMessage: 'Weather service unavailable'
+    })
   }
 }
 
 function parseOrThrow(schema, input) {
-  var _a, _b;
+  var _a, _b
   try {
-    return schema.parse(input);
+    return schema.parse(input)
   } catch (err) {
     if (err instanceof ZodError) {
-      const message = (_b = (_a = err.issues.at(0)) == null ? void 0 : _a.message) != null ? _b : "Invalid request payload";
-      badRequest(message);
+      const message =
+        (_b = (_a = err.issues.at(0)) == null ? void 0 : _a.message) != null
+          ? _b
+          : 'Invalid request payload'
+      badRequest(message)
     }
-    throw err;
+    throw err
   }
 }
 
 const WeatherQuerySchema = z.object({
-  city: z.string().min(1, "City is required"),
-  unit: z.enum(["metric", "imperial"]).optional()
-});
+  city: z.string().min(1, 'City is required'),
+  unit: z.enum(['metric', 'imperial']).optional()
+})
 const WeatherItemSchema = z.object({
   description: z.string(),
   icon: z.string()
-});
+})
 const OpenWeatherResponseSchema = z.object({
   name: z.string(),
   weather: z.tuple([WeatherItemSchema]).rest(WeatherItemSchema),
@@ -79,15 +79,17 @@ const OpenWeatherResponseSchema = z.object({
   clouds: z.object({
     all: z.number()
   }),
-  rain: z.object({
-    "1h": z.number()
-  }).optional(),
+  rain: z
+    .object({
+      '1h': z.number()
+    })
+    .optional(),
   sys: z.object({
     country: z.string(),
     sunrise: z.number(),
     sunset: z.number()
   })
-});
+})
 const WeatherResponseSchema = z.object({
   city: z.string(),
   country: z.string(),
@@ -105,20 +107,20 @@ const WeatherResponseSchema = z.object({
   icon: z.string(),
   sunrise: z.number(),
   sunset: z.number()
-});
+})
 
-const storage = useStorage("cache");
+const storage = useStorage('cache')
 async function getWeather(query, apiKey) {
-  var _a, _b;
-  const { city, unit } = parseOrThrow(WeatherQuerySchema, query);
-  const normalizedCity = city.trim().toLowerCase();
-  const normalizedUnit = unit != null ? unit : "metric";
-  const cacheKey = `weather:${normalizedCity}:${normalizedUnit}`;
-  const cached = await storage.getItem(cacheKey);
-  if (cached) return cached;
+  var _a, _b
+  const { city, unit } = parseOrThrow(WeatherQuerySchema, query)
+  const normalizedCity = city.trim().toLowerCase()
+  const normalizedUnit = unit != null ? unit : 'metric'
+  const cacheKey = `weather:${normalizedCity}:${normalizedUnit}`
+  const cached = await storage.getItem(cacheKey)
+  if (cached) return cached
   const data = OpenWeatherResponseSchema.parse(
     await fetchWeather(normalizedCity, apiKey, normalizedUnit)
-  );
+  )
   const result = WeatherResponseSchema.parse({
     city: data.name,
     country: data.sys.country,
@@ -131,15 +133,15 @@ async function getWeather(query, apiKey) {
     windSpeed: data.wind.speed,
     windDirection: data.wind.deg,
     clouds: data.clouds.all,
-    rainLastHour: (_b = (_a = data.rain) == null ? void 0 : _a["1h"]) != null ? _b : 0,
+    rainLastHour: (_b = (_a = data.rain) == null ? void 0 : _a['1h']) != null ? _b : 0,
     condition: data.weather[0].description,
     icon: data.weather[0].icon,
     sunrise: data.sys.sunrise * 1e3,
     sunset: data.sys.sunset * 1e3
-  });
-  await storage.setItem(cacheKey, result, { ttl: 600 });
-  return result;
+  })
+  await storage.setItem(cacheKey, result, { ttl: 600 })
+  return result
 }
 
-export { getWeather as g };
+export { getWeather as g }
 //# sourceMappingURL=weather.service.mjs.map

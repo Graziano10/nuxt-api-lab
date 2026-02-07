@@ -7,11 +7,7 @@ export type ErrorCode =
 /**
  * Internal error factory (NON esportata)
  */
-function httpError(
-  statusCode: number,
-  statusMessage: string,
-  code: ErrorCode
-): never {
+function httpError(statusCode: number, statusMessage: string, code: ErrorCode): never {
   throw createError({
     statusCode,
     statusMessage,
@@ -40,14 +36,10 @@ export function notFound(message = 'Not Found'): never {
   httpError(404, message, 'NOT_FOUND')
 }
 
-export function serviceUnavailable(
-  message = 'Service Unavailable'
-): never {
+export function serviceUnavailable(message = 'Service Unavailable'): never {
   httpError(503, message, 'EXTERNAL_SERVICE_ERROR')
 }
 
-export function internalServerError(
-  message = 'Internal Server Error'
-): never {
+export function internalServerError(message = 'Internal Server Error'): never {
   httpError(500, message, 'INTERNAL_ERROR')
 }

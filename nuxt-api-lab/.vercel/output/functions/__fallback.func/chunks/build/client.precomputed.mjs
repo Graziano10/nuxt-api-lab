@@ -1,4 +1,429 @@
-const client_precomputed = ((h,j,k,m,o,q)=>({dependencies:{"../node_modules/leaflet/dist/leaflet.css":{scripts:{},styles:{},preload:{"../node_modules/leaflet/dist/leaflet.css":{resourceType:"style",prefetch:true,preload:true,file:"leaflet.9UJSYqx2.css",src:"../node_modules/leaflet/dist/leaflet.css"}},prefetch:{}},"../node_modules/nuxt/dist/app/entry.js":{scripts:{"../node_modules/nuxt/dist/app/entry.js":h={resourceType:"script",module:true,prefetch:true,preload:true,file:"DxL2kCLK.js",name:"entry",src:"../node_modules/nuxt/dist/app/entry.js",isEntry:true,dynamicImports:["layouts/default.vue","../node_modules/nuxt/dist/app/components/error-404.vue","../node_modules/nuxt/dist/app/components/error-500.vue"],css:["entry.OeOwB8Kq.css"]}},styles:{"entry.OeOwB8Kq.css":j={file:"entry.OeOwB8Kq.css",resourceType:"style",prefetch:true,preload:true}},preload:{"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j},prefetch:{"entry.OeOwB8Kq.css":j}},"_5G8p0d3B.js":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"_5G8p0d3B.js":k={resourceType:"script",module:true,prefetch:true,preload:true,file:"5G8p0d3B.js",name:"nuxt-link",imports:["../node_modules/nuxt/dist/app/entry.js"]},"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j},prefetch:{"entry.OeOwB8Kq.css":j}},"_Dkd_7fPF.js":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"_Dkd_7fPF.js":m={resourceType:"script",module:true,prefetch:true,preload:true,file:"Dkd_7fPF.js",name:"composables",imports:["../node_modules/nuxt/dist/app/entry.js"]},"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j},prefetch:{"entry.OeOwB8Kq.css":j}},"../node_modules/nuxt/dist/app/components/error-404.vue":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"../node_modules/nuxt/dist/app/components/error-404.vue":{resourceType:"script",module:true,prefetch:true,preload:true,file:"BAFEppd3.js",name:"error-404",src:"../node_modules/nuxt/dist/app/components/error-404.vue",isDynamicEntry:true,imports:["_5G8p0d3B.js","../node_modules/nuxt/dist/app/entry.js","_Dkd_7fPF.js"],css:[]},"_5G8p0d3B.js":k,"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j,"_Dkd_7fPF.js":m},prefetch:{"entry.OeOwB8Kq.css":j}},"error-404.C-Ezrlz-.css":{scripts:{},styles:{},preload:{"error-404.C-Ezrlz-.css":{file:"error-404.C-Ezrlz-.css",resourceType:"style",prefetch:true,preload:true}},prefetch:{}},"../node_modules/nuxt/dist/app/components/error-500.vue":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"../node_modules/nuxt/dist/app/components/error-500.vue":{resourceType:"script",module:true,prefetch:true,preload:true,file:"c2go39Kk.js",name:"error-500",src:"../node_modules/nuxt/dist/app/components/error-500.vue",isDynamicEntry:true,imports:["../node_modules/nuxt/dist/app/entry.js","_Dkd_7fPF.js"],css:[]},"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j,"_Dkd_7fPF.js":m},prefetch:{"entry.OeOwB8Kq.css":j}},"error-500.DBWf9FGj.css":{scripts:{},styles:{},preload:{"error-500.DBWf9FGj.css":{file:"error-500.DBWf9FGj.css",resourceType:"style",prefetch:true,preload:true}},prefetch:{}},"entry.OeOwB8Kq.css":{scripts:{},styles:{},preload:{"entry.OeOwB8Kq.css":j},prefetch:{}},"_CjPBq9Bq.js":{scripts:{},styles:{},preload:{"_CjPBq9Bq.js":{resourceType:"script",module:true,prefetch:true,preload:true,file:"CjPBq9Bq.js",name:"leaflet-src",isDynamicEntry:true}},prefetch:{}},"_CnCcucTy.js":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"_CnCcucTy.js":o={resourceType:"script",module:true,prefetch:true,preload:true,file:"CnCcucTy.js",name:"asyncData",imports:["../node_modules/nuxt/dist/app/entry.js"]},"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j},prefetch:{"entry.OeOwB8Kq.css":j}},"_PMYqsZVC.js":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"_PMYqsZVC.js":q={resourceType:"script",module:true,prefetch:true,preload:true,file:"PMYqsZVC.js",name:"BaseInput",imports:["../node_modules/nuxt/dist/app/entry.js"]},"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j},prefetch:{"entry.OeOwB8Kq.css":j}},"layouts/default.vue":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"layouts/default.vue":{resourceType:"script",module:true,prefetch:true,preload:true,file:"vKYXpskh.js",name:"default",src:"layouts/default.vue",isDynamicEntry:true,imports:["_5G8p0d3B.js","../node_modules/nuxt/dist/app/entry.js"]},"_5G8p0d3B.js":k,"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j},prefetch:{"entry.OeOwB8Kq.css":j}},"pages/agriculture.vue":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"pages/agriculture.vue":{resourceType:"script",module:true,prefetch:true,preload:true,file:"D46k9IZF.js",name:"agriculture",src:"pages/agriculture.vue",isDynamicEntry:true,imports:["_CnCcucTy.js","../node_modules/nuxt/dist/app/entry.js"]},"_CnCcucTy.js":o,"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j},prefetch:{"entry.OeOwB8Kq.css":j}},"pages/index.vue":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"pages/index.vue":{resourceType:"script",module:true,prefetch:true,preload:true,file:"DN5Pjsev.js",name:"index",src:"pages/index.vue",isDynamicEntry:true,imports:["_5G8p0d3B.js","../node_modules/nuxt/dist/app/entry.js","_CnCcucTy.js"]},"_5G8p0d3B.js":k,"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j,"_CnCcucTy.js":o},prefetch:{"entry.OeOwB8Kq.css":j}},"pages/maps.vue":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"pages/maps.vue":{resourceType:"script",module:true,prefetch:true,preload:true,file:"DdnFYLUz.js",name:"maps",src:"pages/maps.vue",isDynamicEntry:true,imports:["../node_modules/nuxt/dist/app/entry.js","_PMYqsZVC.js"],dynamicImports:["_CjPBq9Bq.js"]},"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j,"_PMYqsZVC.js":q},prefetch:{"entry.OeOwB8Kq.css":j}},"pages/trading.vue":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"pages/trading.vue":{resourceType:"script",module:true,prefetch:true,preload:true,file:"BCkLr3jW.js",name:"trading",src:"pages/trading.vue",isDynamicEntry:true,imports:["../node_modules/nuxt/dist/app/entry.js"]},"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j},prefetch:{"entry.OeOwB8Kq.css":j}},"pages/weather.vue":{scripts:{},styles:{"entry.OeOwB8Kq.css":j},preload:{"pages/weather.vue":{resourceType:"script",module:true,prefetch:true,preload:true,file:"BN6w0PPP.js",name:"weather",src:"pages/weather.vue",isDynamicEntry:true,imports:["../node_modules/nuxt/dist/app/entry.js","_PMYqsZVC.js"]},"../node_modules/nuxt/dist/app/entry.js":h,"entry.OeOwB8Kq.css":j,"_PMYqsZVC.js":q},prefetch:{"entry.OeOwB8Kq.css":j}}},entrypoints:["../node_modules/nuxt/dist/app/entry.js"],modules:{"../node_modules/leaflet/dist/leaflet.css":{file:"leaflet.9UJSYqx2.css",resourceType:"style",mimeType:void 0,module:void 0},"../node_modules/nuxt/dist/app/components/error-404.vue":{file:"BAFEppd3.js",resourceType:"script",mimeType:void 0,module:true},"error-404.C-Ezrlz-.css":{file:"error-404.C-Ezrlz-.css",resourceType:"style",mimeType:void 0,module:void 0},"../node_modules/nuxt/dist/app/components/error-500.vue":{file:"c2go39Kk.js",resourceType:"script",mimeType:void 0,module:true},"error-500.DBWf9FGj.css":{file:"error-500.DBWf9FGj.css",resourceType:"style",mimeType:void 0,module:void 0},"../node_modules/nuxt/dist/app/entry.js":{file:"DxL2kCLK.js",resourceType:"script",mimeType:void 0,module:true},"entry.OeOwB8Kq.css":{file:"entry.OeOwB8Kq.css",resourceType:"style",mimeType:void 0,module:void 0},"_5G8p0d3B.js":{file:"5G8p0d3B.js",resourceType:"script",mimeType:void 0,module:true},"_CjPBq9Bq.js":{file:"CjPBq9Bq.js",resourceType:"script",mimeType:void 0,module:true},"_CnCcucTy.js":{file:"CnCcucTy.js",resourceType:"script",mimeType:void 0,module:true},"_Dkd_7fPF.js":{file:"Dkd_7fPF.js",resourceType:"script",mimeType:void 0,module:true},"_PMYqsZVC.js":{file:"PMYqsZVC.js",resourceType:"script",mimeType:void 0,module:true},"layouts/default.vue":{file:"vKYXpskh.js",resourceType:"script",mimeType:void 0,module:true},"pages/agriculture.vue":{file:"D46k9IZF.js",resourceType:"script",mimeType:void 0,module:true},"pages/index.vue":{file:"DN5Pjsev.js",resourceType:"script",mimeType:void 0,module:true},"pages/maps.vue":{file:"DdnFYLUz.js",resourceType:"script",mimeType:void 0,module:true},"pages/trading.vue":{file:"BCkLr3jW.js",resourceType:"script",mimeType:void 0,module:true},"pages/weather.vue":{file:"BN6w0PPP.js",resourceType:"script",mimeType:void 0,module:true}}}))();
+const client_precomputed = ((h, j, k, m, o, q) => ({
+  dependencies: {
+    '../node_modules/leaflet/dist/leaflet.css': {
+      scripts: {},
+      styles: {},
+      preload: {
+        '../node_modules/leaflet/dist/leaflet.css': {
+          resourceType: 'style',
+          prefetch: true,
+          preload: true,
+          file: 'leaflet.9UJSYqx2.css',
+          src: '../node_modules/leaflet/dist/leaflet.css'
+        }
+      },
+      prefetch: {}
+    },
+    '../node_modules/nuxt/dist/app/entry.js': {
+      scripts: {
+        '../node_modules/nuxt/dist/app/entry.js': (h = {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'DxL2kCLK.js',
+          name: 'entry',
+          src: '../node_modules/nuxt/dist/app/entry.js',
+          isEntry: true,
+          dynamicImports: [
+            'layouts/default.vue',
+            '../node_modules/nuxt/dist/app/components/error-404.vue',
+            '../node_modules/nuxt/dist/app/components/error-500.vue'
+          ],
+          css: ['entry.OeOwB8Kq.css']
+        })
+      },
+      styles: {
+        'entry.OeOwB8Kq.css': (j = {
+          file: 'entry.OeOwB8Kq.css',
+          resourceType: 'style',
+          prefetch: true,
+          preload: true
+        })
+      },
+      preload: { '../node_modules/nuxt/dist/app/entry.js': h, 'entry.OeOwB8Kq.css': j },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    '_5G8p0d3B.js': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        '_5G8p0d3B.js': (k = {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: '5G8p0d3B.js',
+          name: 'nuxt-link',
+          imports: ['../node_modules/nuxt/dist/app/entry.js']
+        }),
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    '_Dkd_7fPF.js': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        '_Dkd_7fPF.js': (m = {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'Dkd_7fPF.js',
+          name: 'composables',
+          imports: ['../node_modules/nuxt/dist/app/entry.js']
+        }),
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    '../node_modules/nuxt/dist/app/components/error-404.vue': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        '../node_modules/nuxt/dist/app/components/error-404.vue': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'BAFEppd3.js',
+          name: 'error-404',
+          src: '../node_modules/nuxt/dist/app/components/error-404.vue',
+          isDynamicEntry: true,
+          imports: ['_5G8p0d3B.js', '../node_modules/nuxt/dist/app/entry.js', '_Dkd_7fPF.js'],
+          css: []
+        },
+        '_5G8p0d3B.js': k,
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j,
+        '_Dkd_7fPF.js': m
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    'error-404.C-Ezrlz-.css': {
+      scripts: {},
+      styles: {},
+      preload: {
+        'error-404.C-Ezrlz-.css': {
+          file: 'error-404.C-Ezrlz-.css',
+          resourceType: 'style',
+          prefetch: true,
+          preload: true
+        }
+      },
+      prefetch: {}
+    },
+    '../node_modules/nuxt/dist/app/components/error-500.vue': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        '../node_modules/nuxt/dist/app/components/error-500.vue': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'c2go39Kk.js',
+          name: 'error-500',
+          src: '../node_modules/nuxt/dist/app/components/error-500.vue',
+          isDynamicEntry: true,
+          imports: ['../node_modules/nuxt/dist/app/entry.js', '_Dkd_7fPF.js'],
+          css: []
+        },
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j,
+        '_Dkd_7fPF.js': m
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    'error-500.DBWf9FGj.css': {
+      scripts: {},
+      styles: {},
+      preload: {
+        'error-500.DBWf9FGj.css': {
+          file: 'error-500.DBWf9FGj.css',
+          resourceType: 'style',
+          prefetch: true,
+          preload: true
+        }
+      },
+      prefetch: {}
+    },
+    'entry.OeOwB8Kq.css': {
+      scripts: {},
+      styles: {},
+      preload: { 'entry.OeOwB8Kq.css': j },
+      prefetch: {}
+    },
+    '_CjPBq9Bq.js': {
+      scripts: {},
+      styles: {},
+      preload: {
+        '_CjPBq9Bq.js': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'CjPBq9Bq.js',
+          name: 'leaflet-src',
+          isDynamicEntry: true
+        }
+      },
+      prefetch: {}
+    },
+    '_CnCcucTy.js': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        '_CnCcucTy.js': (o = {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'CnCcucTy.js',
+          name: 'asyncData',
+          imports: ['../node_modules/nuxt/dist/app/entry.js']
+        }),
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    '_PMYqsZVC.js': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        '_PMYqsZVC.js': (q = {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'PMYqsZVC.js',
+          name: 'BaseInput',
+          imports: ['../node_modules/nuxt/dist/app/entry.js']
+        }),
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    'layouts/default.vue': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        'layouts/default.vue': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'vKYXpskh.js',
+          name: 'default',
+          src: 'layouts/default.vue',
+          isDynamicEntry: true,
+          imports: ['_5G8p0d3B.js', '../node_modules/nuxt/dist/app/entry.js']
+        },
+        '_5G8p0d3B.js': k,
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    'pages/agriculture.vue': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        'pages/agriculture.vue': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'D46k9IZF.js',
+          name: 'agriculture',
+          src: 'pages/agriculture.vue',
+          isDynamicEntry: true,
+          imports: ['_CnCcucTy.js', '../node_modules/nuxt/dist/app/entry.js']
+        },
+        '_CnCcucTy.js': o,
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    'pages/index.vue': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        'pages/index.vue': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'DN5Pjsev.js',
+          name: 'index',
+          src: 'pages/index.vue',
+          isDynamicEntry: true,
+          imports: ['_5G8p0d3B.js', '../node_modules/nuxt/dist/app/entry.js', '_CnCcucTy.js']
+        },
+        '_5G8p0d3B.js': k,
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j,
+        '_CnCcucTy.js': o
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    'pages/maps.vue': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        'pages/maps.vue': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'DdnFYLUz.js',
+          name: 'maps',
+          src: 'pages/maps.vue',
+          isDynamicEntry: true,
+          imports: ['../node_modules/nuxt/dist/app/entry.js', '_PMYqsZVC.js'],
+          dynamicImports: ['_CjPBq9Bq.js']
+        },
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j,
+        '_PMYqsZVC.js': q
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    'pages/trading.vue': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        'pages/trading.vue': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'BCkLr3jW.js',
+          name: 'trading',
+          src: 'pages/trading.vue',
+          isDynamicEntry: true,
+          imports: ['../node_modules/nuxt/dist/app/entry.js']
+        },
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    },
+    'pages/weather.vue': {
+      scripts: {},
+      styles: { 'entry.OeOwB8Kq.css': j },
+      preload: {
+        'pages/weather.vue': {
+          resourceType: 'script',
+          module: true,
+          prefetch: true,
+          preload: true,
+          file: 'BN6w0PPP.js',
+          name: 'weather',
+          src: 'pages/weather.vue',
+          isDynamicEntry: true,
+          imports: ['../node_modules/nuxt/dist/app/entry.js', '_PMYqsZVC.js']
+        },
+        '../node_modules/nuxt/dist/app/entry.js': h,
+        'entry.OeOwB8Kq.css': j,
+        '_PMYqsZVC.js': q
+      },
+      prefetch: { 'entry.OeOwB8Kq.css': j }
+    }
+  },
+  entrypoints: ['../node_modules/nuxt/dist/app/entry.js'],
+  modules: {
+    '../node_modules/leaflet/dist/leaflet.css': {
+      file: 'leaflet.9UJSYqx2.css',
+      resourceType: 'style',
+      mimeType: void 0,
+      module: void 0
+    },
+    '../node_modules/nuxt/dist/app/components/error-404.vue': {
+      file: 'BAFEppd3.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    },
+    'error-404.C-Ezrlz-.css': {
+      file: 'error-404.C-Ezrlz-.css',
+      resourceType: 'style',
+      mimeType: void 0,
+      module: void 0
+    },
+    '../node_modules/nuxt/dist/app/components/error-500.vue': {
+      file: 'c2go39Kk.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    },
+    'error-500.DBWf9FGj.css': {
+      file: 'error-500.DBWf9FGj.css',
+      resourceType: 'style',
+      mimeType: void 0,
+      module: void 0
+    },
+    '../node_modules/nuxt/dist/app/entry.js': {
+      file: 'DxL2kCLK.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    },
+    'entry.OeOwB8Kq.css': {
+      file: 'entry.OeOwB8Kq.css',
+      resourceType: 'style',
+      mimeType: void 0,
+      module: void 0
+    },
+    '_5G8p0d3B.js': { file: '5G8p0d3B.js', resourceType: 'script', mimeType: void 0, module: true },
+    '_CjPBq9Bq.js': { file: 'CjPBq9Bq.js', resourceType: 'script', mimeType: void 0, module: true },
+    '_CnCcucTy.js': { file: 'CnCcucTy.js', resourceType: 'script', mimeType: void 0, module: true },
+    '_Dkd_7fPF.js': { file: 'Dkd_7fPF.js', resourceType: 'script', mimeType: void 0, module: true },
+    '_PMYqsZVC.js': { file: 'PMYqsZVC.js', resourceType: 'script', mimeType: void 0, module: true },
+    'layouts/default.vue': {
+      file: 'vKYXpskh.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    },
+    'pages/agriculture.vue': {
+      file: 'D46k9IZF.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    },
+    'pages/index.vue': {
+      file: 'DN5Pjsev.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    },
+    'pages/maps.vue': {
+      file: 'DdnFYLUz.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    },
+    'pages/trading.vue': {
+      file: 'BCkLr3jW.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    },
+    'pages/weather.vue': {
+      file: 'BN6w0PPP.js',
+      resourceType: 'script',
+      mimeType: void 0,
+      module: true
+    }
+  }
+}))()
 
-export { client_precomputed as default };
+export { client_precomputed as default }
 //# sourceMappingURL=client.precomputed.mjs.map

@@ -1,10 +1,9 @@
 import { z } from 'zod'
 
-
 /** Input validation */
 export const WeatherQuerySchema = z.object({
-    city: z.string().min(1, 'City is required'),
-    unit: z.enum(['metric', 'imperial']).optional()
+  city: z.string().min(1, 'City is required'),
+  unit: z.enum(['metric', 'imperial']).optional()
 })
 
 /** External API validation (OpenWeather) */
@@ -74,7 +73,6 @@ export const WeatherResponseSchema = z.object({
   sunrise: z.number(),
   sunset: z.number()
 })
-
 
 export type WeatherResponse = z.infer<typeof WeatherResponseSchema>
 export type OpenWeatherResponse = z.infer<typeof OpenWeatherResponseSchema>

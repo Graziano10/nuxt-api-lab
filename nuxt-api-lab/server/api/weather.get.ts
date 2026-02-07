@@ -1,6 +1,6 @@
 import { getWeather } from '../services/weather.service'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async event => {
   const query = getQuery(event)
   const config = useRuntimeConfig(event)
 

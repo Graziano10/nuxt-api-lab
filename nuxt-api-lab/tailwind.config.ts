@@ -12,12 +12,12 @@ export default <Config>{
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#2563eb', 
-          hover: '#1d4ed8',   
+          DEFAULT: '#2563eb',
+          hover: '#1d4ed8'
         },
         surface: {
           DEFAULT: '#ffffff',
-          muted: '#f8fafc',  
+          muted: '#f8fafc',
           dark: '#0f172a'
         },
         text: {

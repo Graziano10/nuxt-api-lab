@@ -1,11 +1,12 @@
+<script setup lang="ts">
+  import AppFooter from '~/components/AppFooter.vue'
+</script>
+
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100">
     <header class="border-b border-gray-800">
       <div class="max-w-7xl mx-auto px-6 py-4">
-        <NuxtLink
-          to="/"
-          class="text-xl font-bold hover:text-primary hover:border-b-2 transition"
-        >
+        <NuxtLink to="/" class="text-xl font-bold hover:text-primary hover:border-b-2 transition">
           Nuxt API Lab
         </NuxtLink>
       </div>
@@ -14,5 +15,7 @@
     <main class="max-w-7xl mx-auto px-6 py-8">
       <slot />
     </main>
+
+    <AppFooter />
   </div>
 </template>

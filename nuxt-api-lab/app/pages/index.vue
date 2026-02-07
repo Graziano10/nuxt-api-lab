@@ -2,13 +2,11 @@
   <section class="space-y-12">
     <!-- Hero -->
     <header class="space-y-4">
-      <h1 class="text-3xl font-bold tracking-tight" to ="/index">
-        Nuxt API Lab
-      </h1>
+      <h1 class="text-3xl font-bold tracking-tight" to="/index">Nuxt API Lab</h1>
 
       <p class="text-gray-400 max-w-2xl">
-        Laboratorio pratico per l’integrazione sicura e scalabile di API di terze parti
-        utilizzando Nuxt 4, Vue 3 e Tailwind CSS.
+        Laboratorio pratico per l’integrazione sicura e scalabile di API di terze parti utilizzando
+        Nuxt 4, Vue 3 e Tailwind CSS.
       </p>
     </header>
 
@@ -47,13 +45,13 @@
     <div class="rounded-xl border border-gray-800 bg-gray-900 p-6">
       <h2 class="text-lg font-semibold mb-2">Server status</h2>
 
-      <pre class="text-sm text-green-400">
-{{ health }}
+      <pre class="text-sm text-green-400"
+        >{{ health }}
       </pre>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const { data: health } = await useFetch('/api/health')
+  const { data: health } = await useFetch('/api/health')
 </script>
