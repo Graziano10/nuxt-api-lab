@@ -14,7 +14,8 @@
     "nuxt": "^4.3.0",
     "vue": "^3.5.27",
     "vue-router": "^4.6.4",
-    "zod": "^4.3.6"
+    "zod": "^4.3.6",
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.13.0",
